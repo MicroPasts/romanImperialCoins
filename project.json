@@ -1,0 +1,7 @@
+{
+    "name": "Roman Imperial Coin concordance",
+    "short_name": "ricConcordance",
+    "thumbnail": "",
+    "description": "Assign RIC identifiers to PAS records",
+    "question": "Help assign Roman Imperial Coinage identifiers to Portable Antiquities Scheme records"
+}
