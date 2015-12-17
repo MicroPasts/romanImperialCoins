@@ -102,20 +102,16 @@ Modernizr.load({
   test: window.JSON,
   nope: '/static/js/vendor/json2.min.js'
 });
-
-
-
-
-
 </script>
 
 <script>
-    $.ajax({
+$.ajax({
     url: 'https://finds.org.uk/database/artefacts/record/id/1/format/json',
     dataType: 'jsonp',
     success: function(data){
-        console.log(data);
-    });
+    console.log(data);
+    }
+});
 </script>
 
 <!-- Step through modals -->
@@ -143,6 +139,7 @@ Modernizr.load({
     }
     showStep('next');
     $("#modal").modal('show');
+
 
 </script>
 
@@ -211,6 +208,7 @@ Modernizr.load({
         }
     });
     pybossa.run('ricConcordance');
+
 
 
 
