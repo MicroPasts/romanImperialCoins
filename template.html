@@ -110,15 +110,12 @@ Modernizr.load({
 </script>
 
 <script>
-$(document).ready(function() {
     $.ajax({
     url: 'https://finds.org.uk/database/artefacts/record/id/1/format/json',
     dataType: 'jsonp',
     success: function(data){
         console.log(data);
     });
-}});
-
 </script>
 
 <!-- Step through modals -->
