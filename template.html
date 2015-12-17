@@ -55,6 +55,29 @@
 
         <h4>Can you assign this coin to an RIC number?</h4>
 
+        <div class="row">
+            <div class="pasCoin">
+                <img class="pull-right" width="300"/>
+                <ul>
+                    <li>RecordID:</li>
+                    <li>Obverse Inscription:</li>
+                    <li>Obverse Description:</li>
+                    <li>Reverse Inscription:</li>
+                    <li>Reverse Description:</li>
+                    <li>Issuer:</li>
+                    <li>Mint:</li>
+                    <li>Denomination:</li>
+                    <li>Current RIC ID:</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="ocreMatches"></div>
+        </div>
+        <div class="row">
+            <div class="comments"></div>
+        </div>
+
         <button class="btn btn-success btn-answer" value='Yes'>Submit your answer</button>
 
         <!-- Feedback items for the user -->
@@ -81,6 +104,19 @@ Modernizr.load({
 });
 
 
+
+
+</script>
+
+<script>
+$(document).ready(function() {
+    $.ajax({
+    url: 'https://finds.org.uk/database/artefacts/record/id/1/format/json',
+    dataType: 'jsonp',
+    success: function(data){
+        console.log(data)
+    });
+});
 </script>
 
 <!-- Step through modals -->
@@ -108,8 +144,6 @@ Modernizr.load({
     }
     showStep('next');
     $("#modal").modal('show');
-
-
 </script>
 
 <!-- Pyboss scripts -->
@@ -177,6 +211,8 @@ Modernizr.load({
         }
     });
     pybossa.run('ricConcordance');
+
+
 
 
 </script>
