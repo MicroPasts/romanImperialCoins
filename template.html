@@ -108,7 +108,7 @@ Modernizr.load({
 $(document).ready(function() {
     $.ajax({
         url: 'https://finds.org.uk/database/artefacts/record/id/1/format/json',
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function(data){
             console.log(data);
         },
