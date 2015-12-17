@@ -113,9 +113,22 @@ $(document).ready(function() {
             console.log(data);
         },
         error: function() {
-        alert("error with call");
+            alert("error with call");
         }
     });
+
+    $.ajax({
+        type: "get",
+        url: "http://nomisma.org/apis/numishareResults?identifiers=ric.1%282%29.aug.1A|ric.1%282%29.aug.1B&baseUri=http://numismatics.org/ocre/id/",
+        dataType: "xml",
+        success: function(data) {
+            console.log(data);
+        },
+        error: function(xhr, status) {
+            alert("error with call");
+        }
+    });
+
 });
 </script>
 
