@@ -198,11 +198,11 @@ $(document).ready(function() {
         if ( !$.isEmptyObject(task) ) {
 
         $.ajax({
-        url: task.info.object + '/format/json',
-        dataType: 'json',
+        url: task.info.object + '/format/xml',
+        dataType: 'xml',
         success: function(data){
             console.log(data);
-            console.log(data[0].old_findID);
+            console.log(data.response.artefact.old_findID);
             $("#recordID").html(data[0].old_findID);
             $("#obvInsc").html(data[0].obverseInscription);
         },
