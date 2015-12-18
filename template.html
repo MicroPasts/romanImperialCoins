@@ -61,12 +61,12 @@
                 <ul>
                     <li>RecordID: <span id="recordID"></span></li>
                     <li>Obverse Inscription: <span id="obvInsc"></span></li>
-                    <li>Obverse Description:</li>
-                    <li>Reverse Inscription:</li>
-                    <li>Reverse Description:</li>
-                    <li>Issuer:</li>
+                    <li>Obverse Description: <span id="obvDesc"></span></li>
+                    <li>Reverse Inscription: <span id="revInsc"></span></li>
+                    <li>Reverse Description: <span id="revDesc"></span></li>
+                    <li>Issuer: </li>
                     <li>Mint:</li>
-                    <li>Denomination:</li>
+                    <li>Denomination: <span id="denomination"></span></li>
                     <li>Current RIC ID:</li>
                 </ul>
             </div>
@@ -203,6 +203,10 @@ $(document).ready(function() {
         success: function(data){
             console.log(data[1][0]);
             $("#recordID").html(data[1][0].old_findID);
+            $("#obvInsc").html(data[1][0].obverseInscription);
+            $("#obvDesc").html(data[1][0].obverseDescription);
+            $("#revInsc").html(data[1][0].reverseInscription);
+            $("#revInsc").html(data[1][0].reverseDescription);
         },
         error: function() {
             alert("error with call");
