@@ -116,18 +116,22 @@ $(document).ready(function() {
             alert("error with call");
         }
     });
-
-    $.ajax({
-        type: "get",
-        url: "http://nomisma.org/apis/numishareResults?identifiers=ric.1%282%29.aug.1A|ric.1%282%29.aug.1B&baseUri=http://numismatics.org/ocre/id/",
-        dataType: "xml",
-        success: function(data) {
-            console.log(data);
-        },
-        error: function(xhr, status) {
-            alert("error with call");
-        }
-    });
+    <!--var ids = [];-->
+    <!--var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=';-->
+    <!--var baseUri = "baseUri=http://numismatics.org/ocre/id/";-->
+    <!--var identifiers = "identifiers=";-->
+    <!--var apiCall = nomismaUrl + identifiers + baseUri;-->
+    <!--$.ajax({-->
+        <!--type: "get",-->
+        <!--url: apiCall,-->
+        <!--dataType: "xml",-->
+        <!--success: function(data) {-->
+            <!--console.log(data);-->
+        <!--},-->
+        <!--error: function(xhr, status) {-->
+            <!--//alert("error with call");-->
+        <!--}-->
+    <!--});-->
 
 });
 </script>
@@ -189,6 +193,18 @@ $(document).ready(function() {
       });
     pybossa.presentTask(function(task, deferred) {
         if ( !$.isEmptyObject(task) ) {
+
+        $.ajax({
+        url: info.object + '/format/json',
+        dataType: 'json',
+        success: function(data){
+            console.log(data);
+        },
+        error: function() {
+            alert("error with call");
+        }
+    });
+
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
         $("a#overlay").attr("href", task.info.url_b);
