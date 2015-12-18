@@ -202,6 +202,7 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(data){
             console.log(data);
+            console.log(data[0].old_findID);
             $("#recordID").html(data[0].old_findID);
             $("#obvInsc").html(data[0].obverseInscription);
         },
