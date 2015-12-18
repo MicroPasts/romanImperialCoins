@@ -202,7 +202,6 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(data){
             console.log(data[1][0]);
-            var values = jquery
             $("#recordID").html(data[1][0].old_findID);
         },
         error: function() {
