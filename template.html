@@ -199,12 +199,11 @@ $(document).ready(function() {
 
         $.ajax({
         url: task.info.object + '/format/xml',
-        dataType: 'xml',
+        dataType: 'json',
         success: function(data){
             console.log(data);
-            console.log(data.response.artefact.old_findID);
-            $("#recordID").html(data[0].old_findID);
-            $("#obvInsc").html(data[0].obverseInscription);
+            var record = jQuery.parseJSON(data);
+            console.log(record);
         },
         error: function() {
             alert("error with call");
@@ -213,9 +212,6 @@ $(document).ready(function() {
 
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
-        $("a#overlay").attr("href", task.info.url_b);
-        $("a#download").attr("download", task.id);
-        $("a#download").attr("href", task.info.url_b );
         $('#support').tooltip({'placement': 'top'});
 
         $('.btn-answer').off('click').on('click', function(evt) {
