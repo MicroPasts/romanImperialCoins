@@ -195,7 +195,7 @@ $(document).ready(function() {
         if ( !$.isEmptyObject(task) ) {
 
         $.ajax({
-        url: info.object + '/format/json',
+        url: task.info.object + '/format/json',
         dataType: 'json',
         success: function(data){
             console.log(data);
