@@ -245,19 +245,20 @@ $(document).ready(function() {
     });
       var ids = [];
 
-      ids.push = task.info.match1;
+      ids.push(task.info.match1);
       if(task.info.match2 != null) {
-        ids.push = task.info.match2;
+        ids.push(task.info.match2);
       }
       if(task.info.match3 != null) {
-        ids.push = task.info.match3;
+        ids.push(task.info.match3);
       }
       if(task.info.match4 != null) {
-        ids.push = task.info.match4;
+        ids.push(task.info.match4);
       }
+      console.log(ids);
         var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=";
         var baseUri = "baseUri=http://numismatics.org/ocre/id/";
-        var identifiers = "identifiers=" + ids.join("|");
+        var identifiers = ids.join("|");
         var apiCall = nomismaUrl + identifiers + baseUri;
         console.log(apiCall);
         $.ajax({
