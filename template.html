@@ -244,21 +244,33 @@ $(document).ready(function() {
         }
     });
       var ids = [];
+
+      ids.push = task.info.match1;
+      if(task.info.match2 != null) {
+        ids.push = task.info.match2;
+      }
+      if(task.info.match3 != null) {
+        ids.push = task.info.match3;
+      }
+      if(task.info.match4 != null) {
+        ids.push = task.info.match4;
+      }
         var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=";
         var baseUri = "baseUri=http://numismatics.org/ocre/id/";
-        var identifiers = "identifiers=";
+        var identifiers = "identifiers=" + ids.join("|");
         var apiCall = nomismaUrl + identifiers + baseUri;
-        <!--$.ajax({-->
-                <!--type: "get",-->
-                <!--url: apiCall,-->
-                <!--dataType: "xml",-->
-                <!--success: function(data) {-->
-                    <!--console.log(data);-->
-                <!--},-->
-                <!--error: function(xhr, status) {-->
-                    <!--//alert("error with call");-->
-                <!--}-->
-            <!--});-->
+        console.log(apiCall);
+        $.ajax({
+                type: "get",
+                url: apiCall,
+                dataType: "xml",
+                success: function(data) {
+                    console.log(data);
+                },
+                error: function(xhr, status) {
+                    //alert("error with call");
+                }
+            });
 
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
