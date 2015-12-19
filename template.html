@@ -268,11 +268,10 @@ $(document).ready(function() {
                 success: function(data) {
                     console.log(data);
                     var matches = [];
-                    matches.push(data[0].id);
-                    matches.push(data[1].id);
-                    matches.push(data[2].id);
+                    matches.push(data.types[0].id);
+                    matches.push(data.types[1].id);
+                    matches.push(data.types[2].id);
                     console.log(matches);
-
                 },
                 error: function(xhr, status) {
                     //alert("error with call");
