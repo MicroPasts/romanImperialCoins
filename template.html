@@ -281,8 +281,10 @@ $(document).ready(function() {
                         var objects = item.objects;
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
+                            html += '<div class="col-sm-6 col-md-4"><div class="thumbnail">';
                             html += '<img src="' + object.obvThumb + '" width="100"/>';
                             html += '<img src="' + object.revThumb + '" width="100"/>';
+                            html += '</div></div>';
                             }
                         });
                         $('#matches').append(html);
