@@ -268,10 +268,15 @@ $(document).ready(function() {
                 success: function(data) {
                     console.log(data);
                     var matches = [];
-                    matches.push(data.types[0].id);
-                    matches.push(data.types[1].id);
-                    matches.push(data.types[2].id);
+                    matches.push(data.types[0]);
+                    matches.push(data.types[1]);
+                    matches.push(data.types[2]);
                     console.log(matches);
+                    $.each(matches, function(index, item){
+                        var html;
+                        html = '<h3>' + item.id + '</h3><p>Specimen count on Ocre:' + item.object-count + '</p>';
+                        $('#matches').append(html);
+                    });
                 },
                 error: function(xhr, status) {
                     //alert("error with call");
