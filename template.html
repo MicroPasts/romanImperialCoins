@@ -194,7 +194,7 @@ $(document).ready(function() {
         success: function(data){
             console.log(data[1][0]);
 
-            var numismatic = [];
+            var numismatic = {};
 
             numismatic['Record ID'] = data[1][0].old_findID;
 
@@ -234,8 +234,8 @@ $(document).ready(function() {
                 $("#pasImage").attr("src", root + imageDir + filename);
             }
 
-            $.each(numismatic, function(k, v) {
-                var html = "<li>" + k + " : " + v + "</li>";
+            $.each(numismatic, function(key, value) {
+                var html = "<li>" + key + " : " + value + "</li>";
                 console.log(html);
                 $('#details').append(html);
             });
