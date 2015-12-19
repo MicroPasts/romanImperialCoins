@@ -282,6 +282,7 @@ $(document).ready(function() {
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
                             html += '<img src="' + object.obvRef + '" width="200"/>';
+                            html += '<img src="' + object.revRef + '" width="200"/>';
                             }
                         });
                         $('#matches').append(html);
