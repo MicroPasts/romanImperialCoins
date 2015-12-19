@@ -277,7 +277,8 @@ $(document).ready(function() {
                     console.log(matches);
                     $.each(matches, function(index, item){
                         var html;
-                        html = '<h3>' + item.id + '</h3>;
+                        html = '<h3>' + item.id + '</h3>';
+                        html += '<p>Potential specimen matches</p>';
                         html += '<div class="row">';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
