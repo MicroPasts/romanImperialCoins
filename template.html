@@ -63,7 +63,12 @@
             </div>
         </div>
         <div class="row">
-            <div class="ocreMatches"></div>
+            <div class="ocreMatches">
+                <h2>Possible matches</h2>
+                <div id="matches">
+
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="comments"></div>
@@ -108,22 +113,8 @@ $(document).ready(function() {
             <!--alert("error with call");-->
         <!--}-->
     <!--});-->
-    <!--var ids = [];-->
-    <!--var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=';-->
-    <!--var baseUri = "baseUri=http://numismatics.org/ocre/id/";-->
-    <!--var identifiers = "identifiers=";-->
-    <!--var apiCall = nomismaUrl + identifiers + baseUri;-->
-    <!--$.ajax({-->
-        <!--type: "get",-->
-        <!--url: apiCall,-->
-        <!--dataType: "xml",-->
-        <!--success: function(data) {-->
-            <!--console.log(data);-->
-        <!--},-->
-        <!--error: function(xhr, status) {-->
-            <!--//alert("error with call");-->
-        <!--}-->
-    <!--});-->
+
+
 
 });
 
@@ -187,7 +178,7 @@ $(document).ready(function() {
       });
     pybossa.presentTask(function(task, deferred) {
         if ( !$.isEmptyObject(task) ) {
-
+        console.log(task);
         $.ajax({
         url: task.info.object + '/format/json',
         dataType: 'json',
@@ -251,6 +242,25 @@ $(document).ready(function() {
         error: function() {
             alert("error with call");
         }
+
+        var ids = {};
+        var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=';
+        var baseUri = "baseUri=http://numismatics.org/ocre/id/";
+        var identifiers = "identifiers=";
+        var apiCall = nomismaUrl + identifiers + baseUri;
+        <!--$.ajax({-->
+                <!--type: "get",-->
+                <!--url: apiCall,-->
+                <!--dataType: "xml",-->
+                <!--success: function(data) {-->
+                    <!--console.log(data);-->
+                <!--},-->
+                <!--error: function(xhr, status) {-->
+                    <!--//alert("error with call");-->
+                <!--}-->
+            <!--});-->
+
+
     });
 
         $("#question").html(task.info.question);
