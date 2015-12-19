@@ -235,8 +235,9 @@ $(document).ready(function() {
             }
 
             $.each(numismatic, function(k, v) {
-                var html = k + " : " + v;
-                $('#details').append($('<li></li>').html(html));
+                var html = "<li>" + k + " : " + v + "</li>";
+                console.log(html);
+                $('#details').append(html);
             });
 
         },
