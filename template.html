@@ -277,7 +277,7 @@ $(document).ready(function() {
                         html = '<h3>' + item.id + '</h3><p>Specimen count on Ocre:</p>';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
-                            html = '<img src="' + object.obvRef + '" width="200"/>';
+                            html += '<img src="' + object.obvRef + '" width="200"/>';
                         });
                         $('#matches').append(html);
                     });
