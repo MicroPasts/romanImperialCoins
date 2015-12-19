@@ -242,8 +242,8 @@ $(document).ready(function() {
         error: function() {
             alert("error with call");
         }
-
-        var ids = [];
+    });
+      var ids = [];
         var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=';
         var baseUri = "baseUri=http://numismatics.org/ocre/id/";
         var identifiers = "identifiers=";
@@ -259,9 +259,6 @@ $(document).ready(function() {
                     <!--//alert("error with call");-->
                 <!--}-->
             <!--});-->
-
-
-    });
 
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
