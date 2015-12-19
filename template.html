@@ -277,7 +277,8 @@ $(document).ready(function() {
                     console.log(matches);
                     $.each(matches, function(index, item){
                         var html;
-                        html = '<h3>' + item.id + '</h3><p>Specimen count on Ocre:</p>';
+                        html = '<h3>' + item.id + '</h3>;
+                        html += '<div class="row">';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
@@ -287,6 +288,7 @@ $(document).ready(function() {
                             html += '</div></div>';
                             }
                         });
+                        html += '</div>';
                         $('#matches').append(html);
                     });
                 },
