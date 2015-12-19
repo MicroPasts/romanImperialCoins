@@ -57,7 +57,7 @@
 
         <div class="row">
             <div class="pasCoin">
-                <img class="pull-right" width="300"/>
+                <img id="pasImage" class="pull-right" width="300" src=""/>
                 <ul>
                     <li>RecordID: <span id="recordID"></span></li>
                     <li>Obverse Inscription: <span id="obvInsc"></span></li>
@@ -202,11 +202,51 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(data){
             console.log(data[1][0]);
+
+            var numismatic = [];
+
+            numismatic['Record ID'] = data[1][0].old_findID;
+
+            if(data[1][0].obverseInscription != null) {
+                numismatic['Obverse inscription'] = data[1][0].obverseInscription;
+            }
+
+            if(data[1][0].obverseDescription != null) {
+                numismatic['Obverse description'] = data[1][0].obverseDescription;
+            }
+
+            if(data[1][0].reverseInscription != null) {
+                numismatic['Reverse inscription'] = data[1][0].reverseInscription;
+            }
+
+            if(data[1][0].reverseDescription != null) {
+                numismatic['Reverse description'] = data[1][0].reverseDescription;
+            }
+
+            if(data[1][0].mintName != null) {
+                numismatic['Mint'] = data[1][0].mintName;
+            }
+
+            if(data[1][0].denomination != null) {
+                numismatic['Denomination'] = data[1][0].denomination;
+            }
+            console.log(numismatic);
+
+            if(data[1][0].filename != null) {
+                var filename = data[1][0].filename;
+                var imageDir = data[1][0].imagedir;
+                var root = 'https://finds.org.uk/';
+                $("#pasImage").attr("src", root + imageDir + filename);
+            }
+
+
             $("#recordID").html(data[1][0].old_findID);
-            $("#obvInsc").html(data[1][0].obverseInscription);
+            $("#obvInsc").html(data[1][0].old_findID);
             $("#obvDesc").html(data[1][0].obverseDescription);
             $("#revInsc").html(data[1][0].reverseInscription);
-            $("#revInsc").html(data[1][0].reverseDescription);
+            $("#revDesc").html(data[1][0].reverseDescription);
+            $("#mint").html(data[1][0].mintName);
+            $("#denom").html(data[1][0].denomination);
         },
         error: function() {
             alert("error with call");
