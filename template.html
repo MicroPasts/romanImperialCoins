@@ -99,6 +99,7 @@ Modernizr.load({
   nope: '/static/js/vendor/json2.min.js'
 });
 
+
 </script>
 
 <script>
@@ -117,6 +118,7 @@ $(document).ready(function() {
 
 
 });
+
 
 </script>
 
@@ -145,6 +147,7 @@ $(document).ready(function() {
     }
     showStep('next');
     $("#modal").modal('show');
+
 
 
 
@@ -277,7 +280,9 @@ $(document).ready(function() {
                         html = '<h3>' + item.id + '</h3><p>Specimen count on Ocre:</p>';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
+                         if(object.obvRef != null) {
                             html += '<img src="' + object.obvRef + '" width="200"/>';
+                            }
                         });
                         $('#matches').append(html);
                     });
@@ -321,6 +326,7 @@ $(document).ready(function() {
         }
     });
     pybossa.run('ricConcordance');
+
 
 
 
