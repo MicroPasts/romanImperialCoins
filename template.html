@@ -57,7 +57,7 @@
 
         <div class="row">
             <div class="pasCoin">
-                <img id="pasImage" class="pull-right" width="300" src=""/>
+                <img id="pasImage" class="pull-right" width="500" src=""/>
                 <ul id="details">
                 </ul>
             </div>
@@ -223,6 +223,13 @@ $(document).ready(function() {
             }
             if(data[1][0].denomination != null) {
                 numismatic['Denomination'] = data[1][0].denomination;
+            }
+            if(data[1][0].description != null) {
+                numismatic['Description'] = data[1][0].description;
+            }
+
+            if(data[1][0].ricID != null) {
+                numismatic['Current RIC ID'] = data[1][0].ricID;
             }
 
             console.log(numismatic);
