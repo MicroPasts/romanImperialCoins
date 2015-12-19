@@ -65,13 +65,17 @@
         <div class="row">
             <div class="ocreMatches">
                 <h2>Possible matches</h2>
-                <div id="matches">
-
-                </div>
+                <div id="matches"></div>
             </div>
         </div>
         <div class="row">
-            <div class="comments"></div>
+            <div class="comments">
+                <div class="form-group">
+                    <label class="control-label" for="comments">Transcriber's Comments</label>
+                    <textarea class="form-control" rows="5" id="comments" name="comments"
+                              placeholder="Add any comments you have"></textarea>
+                </div>
+            </div>
         </div>
 
         <button class="btn btn-success btn-answer" value='Yes'>Submit your answer</button>
@@ -100,6 +104,7 @@ Modernizr.load({
 });
 
 
+
 </script>
 
 <script>
@@ -118,6 +123,7 @@ $(document).ready(function() {
 
 
 });
+
 
 
 </script>
@@ -147,6 +153,7 @@ $(document).ready(function() {
     }
     showStep('next');
     $("#modal").modal('show');
+
 
 
 
@@ -283,7 +290,7 @@ $(document).ready(function() {
                         var objects = item.objects;
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
-                            html += '<div class="col-sm-6 col-md-4"><div class="thumbnail">';
+                            html += '<div class="col-sm-6 col-md-2"><div class="thumbnail">';
                             html += '<img src="' + object.obvThumb + '" width="100"/>';
                             html += '<img src="' + object.revThumb + '" width="100"/>';
                             html += '</div></div>';
@@ -332,6 +339,7 @@ $(document).ready(function() {
         }
     });
     pybossa.run('ricConcordance');
+
 
 
 
