@@ -257,7 +257,7 @@ $(document).ready(function() {
       }
       console.log(ids);
         var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=";
-        var baseUri = "baseUri=http://numismatics.org/ocre/id/";
+        var baseUri = "&baseUri=http://numismatics.org/ocre/id/";
         var identifiers = ids.join("|");
         var apiCall = nomismaUrl + identifiers + baseUri;
         console.log(apiCall);
