@@ -58,16 +58,7 @@
         <div class="row">
             <div class="pasCoin">
                 <img id="pasImage" class="pull-right" width="300" src=""/>
-                <ul>
-                    <li>RecordID: <span id="recordID"></span></li>
-                    <li>Obverse Inscription: <span id="obvInsc"></span></li>
-                    <li>Obverse Description: <span id="obvDesc"></span></li>
-                    <li>Reverse Inscription: <span id="revInsc"></span></li>
-                    <li>Reverse Description: <span id="revDesc"></span></li>
-                    <li>Issuer: </li>
-                    <li>Mint:</li>
-                    <li>Denomination: <span id="denomination"></span></li>
-                    <li>Current RIC ID:</li>
+                <ul id="details">
                 </ul>
             </div>
         </div>
@@ -227,9 +218,13 @@ $(document).ready(function() {
                 numismatic['Mint'] = data[1][0].mintName;
             }
 
+            if(data[1][0].primaryRuler != null) {
+                numismatic['Issuer'] = data[1][0].primaryRuler;
+            }
             if(data[1][0].denomination != null) {
                 numismatic['Denomination'] = data[1][0].denomination;
             }
+
             console.log(numismatic);
 
             if(data[1][0].filename != null) {
@@ -239,14 +234,11 @@ $(document).ready(function() {
                 $("#pasImage").attr("src", root + imageDir + filename);
             }
 
+            $.each(numismatic, function(k, v) {
+                var html = k + " : " + v;
+                $('#details').append($('<li></li>').html(html));
+            });
 
-            $("#recordID").html(data[1][0].old_findID);
-            $("#obvInsc").html(data[1][0].old_findID);
-            $("#obvDesc").html(data[1][0].obverseDescription);
-            $("#revInsc").html(data[1][0].reverseInscription);
-            $("#revDesc").html(data[1][0].reverseDescription);
-            $("#mint").html(data[1][0].mintName);
-            $("#denom").html(data[1][0].denomination);
         },
         error: function() {
             alert("error with call");
