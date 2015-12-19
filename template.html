@@ -281,8 +281,8 @@ $(document).ready(function() {
                         var objects = item.objects;
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
-                            html += '<img src="' + object.obvRef + '" width="200"/>';
-                            html += '<img src="' + object.revRef + '" width="200"/>';
+                            html += '<img src="' + object.obvThumb + '" width="100"/>';
+                            html += '<img src="' + object.revThumb + '" width="100"/>';
                             }
                         });
                         $('#matches').append(html);
