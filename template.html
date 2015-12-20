@@ -65,10 +65,15 @@
         <div class="row">
             <div class="ocreMatches">
                 <h2>Possible matches</h2>
-                <div id="matches"></div>
+                <div id="matches">
+
+                </div>
             </div>
         </div>
         <div class="row">
+            <div class="checkbox">
+                <label><input type="checkbox" id="revise">PAS record needs revising</label>
+            </div>
             <div class="comments">
                 <div class="form-group">
                     <label class="control-label" for="comments">Transcriber's Comments</label>
@@ -102,11 +107,9 @@ Modernizr.load({
   test: window.JSON,
   nope: '/static/js/vendor/json2.min.js'
 });
-
-
-
 </script>
 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/jquery.flexslider-min.js"></script>
 <!-- Step through modals -->
 <script type="text/javascript">
     var step = -1;
@@ -132,10 +135,6 @@ Modernizr.load({
     }
     showStep('next');
     $("#modal").modal('show');
-
-
-
-
 
 </script>
 
@@ -205,7 +204,7 @@ Modernizr.load({
                 numismatic['Denomination'] = data[1][0].denomination;
             }
             if(data[1][0].description != null) {
-                numismatic['Description'] = data[1][0].description;
+                numismatic['Description'] = data[1][0].description.replace(/<(?:.|\n)*?>/gm, '');;
             }
 
             if(data[1][0].ricID != null) {
@@ -265,17 +264,19 @@ Modernizr.load({
                         var html;
                         html = '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
-                        html += '<div class="row">';
+                        html += '<div class="flexslider">';
+                        html += '<ul class="slides">';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
-                            html += '<div class="col-sm-6 col-md-2"><div class="thumbnail">';
+                            html += '<li>';
                             html += '<img src="' + object.obvThumb + '" width="100"/>';
                             html += '<img src="' + object.revThumb + '" width="100"/>';
                             html += '<p>' + object.collection + ': ' + object.identifier +'</p>';
-                            html += '</div></div>';
+                            html += '</li>';
                             }
                         });
+                        html += '</ul>
                         html += '</div>';
                         $('#matches').append(html);
                     });
@@ -318,14 +319,9 @@ Modernizr.load({
             $("#finish").fadeIn(500);
         }
     });
+    $('.flexslider').flexslider({
+      animation: "slide",
+    });
     pybossa.run('ricConcordance');
-
-
-
-
-
-
-
-
 
 </script>
