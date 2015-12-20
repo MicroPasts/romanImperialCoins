@@ -257,8 +257,8 @@ Modernizr.load({
                     console.log(data);
                     var matches = [];
                     matches.push(data.types[0]);
-                   // matches.push(data.types[1]);
-                   // matches.push(data.types[2]);
+                    matches.push(data.types[1]);
+                    matches.push(data.types[2]);
                     console.log(matches);
                     $.each(matches, function(index, item){
                         var html;
@@ -271,7 +271,7 @@ Modernizr.load({
                          if(object.obvRef != null) {
                             html += '<li>';
                             html += '<img src="' + object.obvThumb + '" width="100"/>';
-                            //html += '<img src="' + object.revThumb + '" width="100"/>';
+                            html += '<img src="' + object.revThumb + '" width="100"/>';
                             //html += '<p>' + object.collection + ': ' + object.identifier +'</p>';
                             html += '</li>';
                             }
@@ -326,6 +326,11 @@ Modernizr.load({
     $(window).load(function(){
   $('#slider').flexslider({
       animation: "slide",
+      itemWidth: 200,
+      itemMargin: 1,
+      minItems: 3,
+      maxItems: 9,
+      move: 0,
   });
 });
 </script>
