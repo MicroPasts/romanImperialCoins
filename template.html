@@ -66,22 +66,6 @@
             <div class="ocreMatches col-md-12">
                 <h2>Possible matches</h2>
                 <div id="matches">
-                    <div class="flexslider">
-                        <ul class="slides">
-                            <li>
-                                <img src="/static/img/MP_SQUARE_notype.png"/>
-                            </li>
-                            <li>
-                                <img src="/static/img/MP_SQUARE_notype.png"/>
-                            </li>
-                            <li>
-                                <img src="/static/img/MP_SQUARE_notype.png"/>
-                            </li>
-                            <li>
-                                <img src="/static/img/MP_SQUARE_notype.png"/>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -298,6 +282,9 @@ Modernizr.load({
                         html += '</ul>';
                         html += '</div>';
                         $('#matches').append(html);
+                        $('.flexslider').flexslider({
+                          animation: "slide",
+                        });
                     });
                 },
                 error: function(xhr, status) {
@@ -344,14 +331,7 @@ Modernizr.load({
 </script>
 <script>
   $(window).load(function()  {
-  $('.flexslider').flexslider({
-      animation: "slide",
-      itemWidth: 200,
-      itemMargin: 1,
-      minItems: 3,
-      maxItems: 9,
-      move: 0,
-  });
+
 });
 
 </script>
