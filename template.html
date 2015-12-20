@@ -264,7 +264,7 @@ Modernizr.load({
                         var html;
                         html = '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
-                        html += '<div id="flexslider">';
+                        html += '<div id="slider">';
                         html += '<ul class="slides">';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
@@ -319,9 +319,13 @@ Modernizr.load({
             $("#finish").fadeIn(500);
         }
     });
-    $('#flexslider').flexslider({
-      animation: "slide",
-    });
     pybossa.run('ricConcordance');
 
+</script>
+<script>
+    $(window).load(function(){
+  $('#slider').flexslider({
+      animation: "slide",
+  });
+});
 </script>
