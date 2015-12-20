@@ -267,7 +267,7 @@ Modernizr.load({
                         var html;
                         html = '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
-                        html += '<div class="flexslider col-md-4">';
+                        html += '<div class="flexslider">';
                         html += '<ul class="slides">';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
@@ -275,7 +275,7 @@ Modernizr.load({
                             html += '<li>';
                             html += '<img src="' + object.obvThumb + '" width="100"/>';
                             html += '<img src="' + object.revThumb + '" width="100"/>';
-                            html += '<p flex-caption>' + object.collection + ': ' + object.identifier +'</p>';
+                            html += '<p class="flex-caption">' + object.collection + ': ' + object.identifier +'</p>';
                             html += '</li>';
                             }
                         });
@@ -285,6 +285,8 @@ Modernizr.load({
                         $('.flexslider').flexslider({
                           animation: "slide",
                           animationLoop: false,
+                          itemWidth: 210,
+                          itemMargin: 5
                         });
                     });
                 },
