@@ -174,7 +174,7 @@ Modernizr.load({
         url: task.info.object + '/format/json',
         dataType: 'json',
         success: function(data){
-            console.log(data[1][0]);
+            //console.log(data[1][0]);
 
             var numismatic = {};
 
@@ -225,7 +225,7 @@ Modernizr.load({
 
             $.each(numismatic, function(key, value) {
                 var html = "<li>" + key + " : " + value + "</li>";
-                console.log(html);
+                //console.log(html);
                 $('#details').append(html);
             });
 
@@ -267,7 +267,7 @@ Modernizr.load({
                         var html;
                         html = '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
-                        html += '<div class="flexslider">';
+                        html += '<div class="flexslider col-md-4">';
                         html += '<ul class="slides">';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
@@ -304,7 +304,7 @@ Modernizr.load({
             var answer = $(evt.target).attr("value");
             if (typeof answer != 'undefined') {
                 task.answer = $("#transcription").serializeJSON();
-                console.log(task.answer);
+                //console.log(task.answer);
                 console.log(data);
                 task.answer.transcription = data;
                 task.answer.comments = $("#comments").val();
