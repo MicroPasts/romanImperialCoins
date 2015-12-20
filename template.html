@@ -273,8 +273,7 @@ Modernizr.load({
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
                             html += '<li>';
-                            html += '<img src="' + object.obvThumb + '" width="100"/>';
-                            html += '<img src="' + object.revThumb + '" width="100"/>';
+                            html += '<img src="' + object.obvThumb + '" width="100"/><img src="' + object.revThumb + '" width="100"/>';
                             html += '<p class="flex-caption">' + object.collection + ': ' + object.identifier +'</p>';
                             html += '</li>';
                             }
@@ -285,7 +284,7 @@ Modernizr.load({
                         $('.flexslider').flexslider({
                           animation: "slide",
                           animationLoop: false,
-                          itemWidth: 210,
+                          itemWidth: 200,
                           itemMargin: 5
                         });
                     });
@@ -332,3 +331,16 @@ Modernizr.load({
 
 
 </script>
+<style>
+    .flex-caption {
+  width: 96%;
+  padding: 2%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+  font-size: 14px;
+  line-height: 18px;
+}
+</style>
