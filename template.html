@@ -251,18 +251,18 @@ Modernizr.load({
         var baseUri = "&baseUri=http://numismatics.org/ocre/id/";
         var identifiers = ids.join("|");
         var apiCall = nomismaUrl + identifiers + baseUri + "&format=json";
-        console.log(apiCall);
+        //console.log(apiCall);
         $.ajax({
                 type: "get",
                 url: apiCall,
                 dataType: "json",
                 success: function(data) {
-                    console.log(data);
+                   // console.log(data);
                     var matches = [];
                     matches.push(data.types[0]);
                     matches.push(data.types[1]);
                     matches.push(data.types[2]);
-                    console.log(matches);
+                   // console.log(matches);
                     $.each(matches, function(index, item){
                         var html;
                         html = '<h3>' + item.id + '</h3>';
@@ -285,8 +285,6 @@ Modernizr.load({
                         $('.flexslider').flexslider({
                           animation: "slide",
                           animationLoop: false,
-                            itemWidth: 210,
-                            itemMargin: 5
                         });
                     });
                 },
