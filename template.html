@@ -66,7 +66,22 @@
             <div class="ocreMatches col-md-12">
                 <h2>Possible matches</h2>
                 <div id="matches">
-
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <img src="/static/img/MP_SQUARE_notype.png"/>
+                            </li>
+                            <li>
+                                <img src="/static/img/MP_SQUARE_notype.png"/>
+                            </li>
+                            <li>
+                                <img src="/static/img/MP_SQUARE_notype.png"/>
+                            </li>
+                            <li>
+                                <img src="/static/img/MP_SQUARE_notype.png"/>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,9 +122,12 @@ Modernizr.load({
   test: window.JSON,
   nope: '/static/js/vendor/json2.min.js'
 });
+
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/flexslider.min.css" type="text/css">
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/jquery.flexslider-min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/flexslider.min.css"
+      type="text/css">
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/jquery.flexslider-min.js"></script>
 <!-- Step through modals -->
 <script type="text/javascript">
     var step = -1;
@@ -135,6 +153,7 @@ Modernizr.load({
     }
     showStep('next');
     $("#modal").modal('show');
+
 
 </script>
 
@@ -321,6 +340,7 @@ Modernizr.load({
     });
     pybossa.run('ricConcordance');
 
+
 </script>
 <script>
   $(window).load(function()  {
@@ -333,4 +353,5 @@ Modernizr.load({
       move: 0,
   });
 });
+
 </script>
