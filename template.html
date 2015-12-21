@@ -289,8 +289,8 @@ Modernizr.load({
                         var html ='';
                         console.log(item.objects);
                         if(item['object-count'] > 0) {
-                        html += '<div class="row">';
-                        html += '<h2 class="lead">' + item.id + ' illustrated examples from our partners</h2>';
+                        html += '<div class="col-md-3">';
+                        html += '<h2 class="lead">' + item.id + ' illustrated examples</h2>';
                         html += '<div class="flexslider">';
                         html += '<ul class="slides">';
                         var objects = item.objects;
@@ -374,12 +374,12 @@ Modernizr.load({
 }
 
 .flexslider {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 100%;
+    max-height: 400px;
 }
 
 .flexslider .slides img {
-    max-width: 200px;
+    max-width: 100px;
     max-height: 200px;
 }
 
