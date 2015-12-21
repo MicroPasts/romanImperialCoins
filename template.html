@@ -271,7 +271,7 @@ Modernizr.load({
                         var html ='';
                         console.log(item.objects);
                         if(item.objects != 'undefined') {
-                        html += '<div class="row">';
+                        html += '<div class="col-md-4">';
                         html += '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
                         html += '<div class="flexslider">';
@@ -355,12 +355,12 @@ Modernizr.load({
   line-height: 18px;
 }
     .flexslider {
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .flexslider .slides img {
-    width: 200px;
-    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
 }
 </style>
