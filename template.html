@@ -262,10 +262,11 @@ Modernizr.load({
                     matches.push(data.types[0]);
                     matches.push(data.types[1]);
                     matches.push(data.types[2]);
-                    if(data.types[3].id != null) {
+                    if(data.types[3].id !== '') {
                         matches.push(data.types[3]);
                     }
                     console.log(matches);
+                    console.log(data.types[3].id);
                     $.each(matches, function(index, item){
                         var html ='';
                         html += '<div class="row">';
@@ -292,8 +293,6 @@ Modernizr.load({
                           slideshow: false,
                           touch: true,
                           maxItems: 6,
-                          minItems: 1,
-
                         });
                     });
                 },
