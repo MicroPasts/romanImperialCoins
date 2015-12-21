@@ -67,6 +67,9 @@
         </div>
         <div class="row" style="min-height:400px;">
             <div class="ocreMatches col-md-12">
+                <div class="form-group" id="radios">
+
+                </div>
                 <h2>Possible matches</h2>
                 <div id="matches">
                 </div>
@@ -81,8 +84,8 @@
                     <label class="control-label" for="comments">Transcriber's Comments</label>
                     <textarea class="form-control" rows="5" id="comments" name="comments"
                               placeholder="Add any comments you have"></textarea>
-                    <label class="control-label" for="revisionSuggested">Transcriber's Comments</label>
-                    <textarea class="form-control" rows="5" id="revisionSuggested" name="comments"
+                    <label class="control-label" for="revisionSuggested">Suggested PAS revisions?</label>
+                    <textarea class="form-control" rows="5" id="revisionSuggested" name="revisionSuggested"
                               placeholder="Tell PAS what to revise"></textarea>
                 </div>
             </div>
@@ -278,6 +281,8 @@ Modernizr.load({
                     }
                     console.log(matches);
                     $.each(matches, function(index, item){
+                        var radios = '<input type="radio" name="' + item.id + '" value="' + item.id + '">' + item.id;
+                        $('#radios').append(radios);
                         var html ='';
                         console.log(item.objects);
                         if(item.objects != 'undefined') {
@@ -354,18 +359,19 @@ Modernizr.load({
 
 </script>
 <style>
-    .flex-caption {
-  width: 96%;
-  padding: 2%;
-  left: 0;
-  bottom: 0;
-  background: rgba(0,0,0,.5);
-  color: #fff;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.3);
-  font-size: 14px;
-  line-height: 18px;
+.flex-caption {
+    width: 96%;
+    padding: 2%;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+    font-size: 14px;
+    line-height: 18px;
 }
-    .flexslider {
+
+.flexslider {
     max-width: 200px;
     max-height: 200px;
 }
@@ -373,5 +379,9 @@ Modernizr.load({
 .flexslider .slides img {
     max-width: 200px;
     max-height: 200px;
+}
+
+#matches {
+    min-height:550px;
 }
 </style>
