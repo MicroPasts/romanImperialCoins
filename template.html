@@ -269,7 +269,7 @@ Modernizr.load({
                     console.log(data.types[3].id);
                     $.each(matches, function(index, item){
                         var html ='';
-                        if(item.objects.length > 1) {
+                        if(item.objects != 'undefined') {
                         html += '<div class="row">';
                         html += '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
