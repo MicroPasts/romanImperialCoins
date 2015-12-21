@@ -57,15 +57,18 @@
 
         <div class="row">
             <div class="pasCoin">
-                <img id="pasImage" class="pull-right" width="500" src=""/>
-                <ul id="details">
-                </ul>
+                <div class="col-md-6">
+                    <ul id="details"></ul>
+                </div>
+                <div class="col-md-6">
+                    <img id="pasImage" width="300" src="" class="center-text" style="max-height:300; max-width:300;"/>
+                </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="min-height:400px;">
             <div class="ocreMatches col-md-12">
                 <h2>Possible matches</h2>
-                <div id="matches" class="col-md-12 center-block">
+                <div id="matches">
                 </div>
             </div>
         </div>
@@ -78,6 +81,9 @@
                     <label class="control-label" for="comments">Transcriber's Comments</label>
                     <textarea class="form-control" rows="5" id="comments" name="comments"
                               placeholder="Add any comments you have"></textarea>
+                    <label class="control-label" for="revisionSuggested">Transcriber's Comments</label>
+                    <textarea class="form-control" rows="5" id="revisionSuggested" name="comments"
+                              placeholder="Tell PAS what to revise"></textarea>
                 </div>
             </div>
         </div>
@@ -260,8 +266,12 @@ Modernizr.load({
                     console.log(data);
                     var matches = [];
                     matches.push(data.types[0]);
-                    matches.push(data.types[1]);
-                    matches.push(data.types[2]);
+                    if(data.types[1].id !== '') {
+                        matches.push(data.types[1]);
+                    }
+                    if(data.types[2].id !== '') {
+                        matches.push(data.types[2]);
+                    }
                     if(data.types[3].id !== '') {
                         matches.push(data.types[3]);
                         console.log(data.types[3].id);
@@ -296,6 +306,7 @@ Modernizr.load({
                           slideshow: false,
                           touch: true,
                           maxItems: 6,
+                          minItems: 1,
                         });
 
                     });
