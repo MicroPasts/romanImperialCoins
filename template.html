@@ -269,6 +269,7 @@ Modernizr.load({
                     console.log(matches);
                     $.each(matches, function(index, item){
                         var html ='';
+                        console.log(item.objects);
                         if(item.objects != 'undefined') {
                         html += '<div class="row">';
                         html += '<h3>' + item.id + '</h3>';
