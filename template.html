@@ -282,7 +282,9 @@ Modernizr.load({
                     }
                     console.log(matches);
                     $.each(matches, function(index, item){
-                        var radios = '<div class="col-md-4"><input type="radio" name="possibleRicID" value="' + item.id + '">' + item.id + '</div>';
+                        var radios = '<div class="col-md-4"><label class="radio-inline">';
+                        radios =+ '<input type="radio" name="possibleRicID" value="' + item.id + '">';
+                        radios += item.id + '</label></div>';
                         $('#radios').append(radios);
                         var html ='';
                         console.log(item.objects);
