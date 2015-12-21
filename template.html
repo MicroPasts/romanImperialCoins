@@ -262,10 +262,13 @@ Modernizr.load({
                     matches.push(data.types[0]);
                     matches.push(data.types[1]);
                     matches.push(data.types[2]);
+                    if(data.types[3].id != null) {
+                        matches.push(data.types[3]);
+                    }
                     console.log(matches);
                     $.each(matches, function(index, item){
                         var html ='';
-                        html += '<div class="col-md-4">';
+                        html += '<div class="">';
                         html += '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
                         html += '<div class="flexslider">';
