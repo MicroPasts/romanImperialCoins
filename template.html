@@ -264,9 +264,9 @@ Modernizr.load({
                     matches.push(data.types[2]);
                     if(data.types[3].id !== '') {
                         matches.push(data.types[3]);
+                        console.log(data.types[3].id);
                     }
                     console.log(matches);
-                    console.log(data.types[3].id);
                     $.each(matches, function(index, item){
                         var html ='';
                         if(item.objects != 'undefined') {
