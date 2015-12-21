@@ -67,10 +67,11 @@
         </div>
         <div class="row" style="min-height:400px;">
             <div class="ocreMatches col-md-12">
+                <h2>Possible matches</h2>
                 <div class="form-group" id="radios">
 
                 </div>
-                <h2>Possible matches</h2>
+                <p>Shown below are specimen examples drawn from OCRE contributing organisatons to help you choose.</p>
                 <div id="matches">
                 </div>
             </div>
@@ -281,7 +282,7 @@ Modernizr.load({
                     }
                     console.log(matches);
                     $.each(matches, function(index, item){
-                        var radios = '<input type="radio" name="' + item.id + '" value="' + item.id + '">' + item.id;
+                        var radios = '<div class="col-md-4"><input type="radio" name="possibleRicID" value="' + item.id + '">' + item.id + '</div>';
                         $('#radios').append(radios);
                         var html ='';
                         console.log(item.objects);
