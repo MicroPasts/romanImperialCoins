@@ -71,7 +71,6 @@
                 <div class="form-group" id="radios">
 
                 </div>
-                <p>Shown below are specimen examples drawn from OCRE contributing organisatons to help you choose.</p>
                 <div id="matches">
                 </div>
             </div>
@@ -283,14 +282,15 @@ Modernizr.load({
                     console.log(matches);
                     $.each(matches, function(index, item){
                         var radios = '';
-                        radios += '<div class="col-md-4"><label class="radio-inline">';
+                        radios += '<div class="col-md-3"><label class="radio-inline">';
                         radios += '<input type="radio" name="possibleRicID" value="' + item.id + '">';
                         radios += item.id + '</label></div>';
                         $('#radios').append(radios);
                         var html ='';
                         console.log(item.objects);
                         if(item['object-count'] > 0) {
-                        html += '<div class="col-md-4">';
+                        html += '<div class="row">';
+                        html += '<h2 class="lead">' + item.id + ' illustrated examples from our partners</h2>;
                         html += '<div class="flexslider">';
                         html += '<ul class="slides">';
                         var objects = item.objects;
