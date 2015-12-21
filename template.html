@@ -268,7 +268,7 @@ Modernizr.load({
                     console.log(matches);
                     $.each(matches, function(index, item){
                         var html ='';
-                        html += '<div class="">';
+                        html += '<div class="row">';
                         html += '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
                         html += '<div class="flexslider">';
@@ -291,7 +291,7 @@ Modernizr.load({
                           animationLoop: false,
                           slideshow: false,
                           touch: true,
-                          maxItems: 1,
+                          maxItems: 6,
                           minItems: 1,
 
                         });
