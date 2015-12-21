@@ -264,7 +264,7 @@ Modernizr.load({
                     matches.push(data.types[2]);
                    // console.log(matches);
                     $.each(matches, function(index, item){
-                        var html;
+                        var html ='';
                         html += '<div class="col-md-4">';
                         html += '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
@@ -287,7 +287,12 @@ Modernizr.load({
                           animation: "slide",
                           animationLoop: false,
                           itemWidth: 200,
-                          itemMargin: 5
+                          itemMargin: 50,
+                          slideshow: false,
+                          touch: true,
+                          maxItems: 1,
+                          minItems: 1,
+
                         });
                     });
                 },
