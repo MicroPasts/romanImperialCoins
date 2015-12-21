@@ -299,7 +299,7 @@ Modernizr.load({
                         $.ajax({
                         type: "get",
                         url: 'http://numismatics.org/ocre/id/' + item.id + '.xml',
-                        dataType: "xml",
+                        dataType: "jsonp xml",
                         success: function(data) {
                             console.log(data);
 
