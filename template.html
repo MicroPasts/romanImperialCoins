@@ -295,6 +295,20 @@ Modernizr.load({
                         radios += item.id + '</label></div>';
                         $('#radios').append(radios);
                         var html ='';
+
+                        $.ajax({
+                        type: "get",
+                        url: 'http://numismatics.org/ocre/id/' + item.id + '.xml',
+                        dataType: "xml",
+                        success: function(data) {
+                            console.log(data);
+
+                        },
+                        error: function() {
+                            alert("error with call");
+                        }
+                        });
+
                         console.log(item.objects);
                         if(item['object-count'] > 0) {
                         html += '<div class="col-md-3">';
