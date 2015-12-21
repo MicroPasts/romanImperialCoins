@@ -280,7 +280,7 @@ Modernizr.load({
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
                             html += '<li>';
-                            html += '<img src="' + object.obvThumb + '" width="50"/><img src="' + object.revThumb + '" width="50"/>';
+                            html += '<img src="' + object.obvThumb + '" width="50"/><img src="' + object.revThumb + '" width="50" style="float:left;"/>';
                             html += '<p class="flex-caption">' + object.collection + ': ' + object.identifier +'</p>';
                             html += '</li>';
                             }
@@ -353,5 +353,14 @@ Modernizr.load({
   text-shadow: 0 -1px 0 rgba(0,0,0,.3);
   font-size: 14px;
   line-height: 18px;
+}
+    .flexslider {
+    width: 200px;
+    height: 200px;
+}
+
+.flexslider .slides img {
+    width: 200px;
+    height: 200px;
 }
 </style>
