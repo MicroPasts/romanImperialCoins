@@ -265,9 +265,10 @@ Modernizr.load({
                    // console.log(matches);
                     $.each(matches, function(index, item){
                         var html;
-                        html = '<h3>' + item.id + '</h3>';
+                        html += '<div class="col-md-4">';
+                        html += '<h3>' + item.id + '</h3>';
                         html += '<p>Potential specimen matches</p>';
-                        html += '<div class="flexslider col-md-4">';
+                        html += '<div class="flexslider">';
                         html += '<ul class="slides">';
                         var objects = item.objects;
                         $.each(objects, function(index, object){
@@ -279,6 +280,7 @@ Modernizr.load({
                             }
                         });
                         html += '</ul>';
+                        html += '</div>';
                         html += '</div>';
                         $('#matches').append(html);
                         $('.flexslider').flexslider({
