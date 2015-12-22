@@ -73,6 +73,11 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div id="metaCoins">
+
+                    </div>
+                </div>
+                <div class="row">
                     <div id="matches">
 
                     </div>
@@ -303,6 +308,27 @@ Modernizr.load({
                         dataType: "json",
                         success: function(data) {
                             console.log(data);
+                            var nuds = [];
+                            nuds['Title'] = data.query.results.nuds.descMeta.title.content;
+                            nuds['Authority'] = data.query.results.nuds.descMeta.typeDesc.authority.persname.content;
+                            nuds['Mint'] = data.query.results.nuds.descMeta.typeDesc.geographic.geogname[0].content;
+                            nuds['Denomination'] = data.query.results.nuds.descMeta.typeDesc.denomination.content;
+                            nuds['Material'] = data.query.results.nuds.descMeta.typeDesc.material.content;
+                            nuds['Obverse Legend'] = data.query.results.nuds.descMeta.typeDesc.obverse.legend.content;
+                            nuds['Reverse Legend'] = data.query.results.nuds.descMeta.typeDesc.reverse.legend.content;
+                            nuds['Obverse Description'] = data.query.results.nuds.descMeta.typeDesc.obverse.type.description.content;
+                            nuds['Reverse Description'] = data.query.results.nuds.descMeta.typeDesc.reverse.type.description.content;
+                            nuds['Date from'] = data.query.results.nuds.descMeta.typeDesc.dateRange.fromDate.content;
+                            nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
+                            console.log(nuds);
+                            var nudsHtml = '<div class="col-md-2">';
+                            nudsHtml += '<ul id="nomisma-' + item.id + '">';
+                            $.each(nuds, function(key, value) {
+                                nudsHtml += "<li>" + key + " : " + value + "</li>";
+                            });
+                            nudsHtml += '</ul></div>
+                            console.log(nudsHtml);
+                            $('#metaCoins').append(nudsHtml);
 
                         },
                         error: function() {
