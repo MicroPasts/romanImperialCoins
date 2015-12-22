@@ -326,13 +326,13 @@ Modernizr.load({
                             nudsHtml += '</ul></div>';
                             $('#metaCoins').append(nudsHtml);
                             $.each(nuds, function(key, value) {
-                                var data = "<li>" + key + " : " + value + "</li>";
+                                var coins = "<li>" + key + " : " + value + "</li>";
                                 var id = '#nomisma-' + item.id;
-                                $(id).append(data);
+                                $(id).append(coins);
 
                             });
                             console.log(nudsHtml);
-                            console.log(data);
+                            console.log(coins);
                         },
                         error: function() {
                             alert("error with call");
