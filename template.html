@@ -329,10 +329,10 @@ Modernizr.load({
                                 var coins = "<li>" + key + " : " + value + "</li>";
                                 var id = '#nomisma-' + item.id;
                                 $(id).append(coins);
-
+                                console.log(coins);
                             });
                             console.log(nudsHtml);
-                            console.log(coins);
+
                         },
                         error: function() {
                             alert("error with call");
