@@ -297,9 +297,10 @@ Modernizr.load({
                         var html ='';
 
                         $.ajax({
+                        crossOrigin: true,
                         type: "get",
-                        url: 'http://numismatics.org/ocre/id/' + item.id + '.xml',
-                        dataType: "jsonp xml",
+                        url: 'https://query.yahooapis.com/v1/public/yql?q=select%20descMeta%20from%20xml%20where%20url%3D"http%3A%2F%2Fnumismatics.org%2Focre%2Fid%2F' + item.id + '.xml"&format=json',
+                        dataType: "json",
                         success: function(data) {
                             console.log(data);
 
