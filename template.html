@@ -422,7 +422,7 @@ Modernizr.load({
                     $("#success").fadeIn(500).fadeOut(500);
                     $("#loading").fadeIn(500).fadeOut(500);
                     $('#comments').val('');
-                    $(this).removeAttr('checked');
+                    $('input:checkbox').removeAttr('checked');
                     $("#possibleRicID").val('');
                     $("#certainty").val('');
                     $("#radios").empty();
