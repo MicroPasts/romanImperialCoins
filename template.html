@@ -376,7 +376,14 @@ Modernizr.load({
                           maxItems: 3,
                           minItems: 1,
                         });
-                        $(function() {
+
+                    });
+                },
+                error: function(xhr, status) {
+                    //alert("error with call");
+                }
+            });
+        $(function() {
                         $( "#slider" ).slider({
                           orientation: "horizontal",
                           range: "min",
@@ -389,13 +396,6 @@ Modernizr.load({
                         });
                         $( "#certainty" ).val( $( "#slider" ).slider( "value" ) );
                         });
-                    });
-                },
-                error: function(xhr, status) {
-                    //alert("error with call");
-                }
-            });
-
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
         $('#support').tooltip({'placement': 'top'});
