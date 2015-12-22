@@ -323,15 +323,16 @@ Modernizr.load({
                             nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
                             console.log(nuds);
                             var identClass = item.id;
-                            identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "");
+                            identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").mystring.replace(/\./g,"");
                             var nudsHtml = '<div class="col-md-3">';
-                            nudsHtml += '<ul id="nomisma' + identClass + '">';
+                            nudsHtml += '<ul id="' + identClass + '">';
                             nudsHtml += '</ul></div>';
                             $('#metaCoins').append(nudsHtml);
                             $.each(nuds, function(key, value) {
                                 var coins = "<li>" + key + " : " + value + "</li>";
-                                var id = '#nomisma' + identClass;
-                                $(id).append(coins);
+
+                                $('#' + identClass).append(coins);
+                                console.log(identClass)l
                                 console.log(coins);
                             });
                             console.log(nudsHtml);
