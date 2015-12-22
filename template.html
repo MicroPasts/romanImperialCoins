@@ -388,7 +388,6 @@ Modernizr.load({
             var answer = $(evt.target).attr("value");
             if (typeof answer != 'undefined') {
                 task.answer = $("#crowdmatchCoin").serializeJSON();
-                console.log(data);
                 task.answer.possibleRicID = $("possibleRicID").val();
                 task.answer.comments = $("#comments").val();
                 task.answer.revisePas = $("#revise").val();
