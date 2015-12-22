@@ -83,7 +83,7 @@
 
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div id="matches">
 
@@ -277,7 +277,7 @@ Modernizr.load({
       if(task.info.match4 != null) {
         ids.push(task.info.match4);
       }
-      console.log(ids);
+      //console.log(ids);
         var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=";
         var baseUri = "&baseUri=http://numismatics.org/ocre/id/";
         var identifiers = ids.join("|");
@@ -288,7 +288,7 @@ Modernizr.load({
                 url: apiCall,
                 dataType: "json",
                 success: function(data) {
-                    console.log(data);
+                    //console.log(data);
                     var matches = [];
                     matches.push(data.types[0]);
                     if(data.types[1].id !== '') {
@@ -299,9 +299,9 @@ Modernizr.load({
                     }
                     if(data.types[3].id !== '') {
                         matches.push(data.types[3]);
-                        console.log(data.types[3].id);
+                        //console.log(data.types[3].id);
                     }
-                    console.log(matches);
+                    //console.log(matches);
                     var a = 1;
                     $.each(matches, function(index, item){
                         var radios = '';
@@ -317,7 +317,7 @@ Modernizr.load({
                         url: 'https://query.yahooapis.com/v1/public/yql?q=select%20descMeta%20from%20xml%20where%20url%3D"http%3A%2F%2Fnumismatics.org%2Focre%2Fid%2F' + item.id + '.xml"&format=json',
                         dataType: "json",
                         success: function(data) {
-                            console.log(data);
+                            //console.log(data);
                             var nuds = {};
                             nuds['Title'] = data.query.results.nuds.descMeta.title.content;
                             nuds['Authority'] = data.query.results.nuds.descMeta.typeDesc.authority.persname.content;
@@ -330,7 +330,7 @@ Modernizr.load({
                             nuds['Reverse Description'] = data.query.results.nuds.descMeta.typeDesc.reverse.type.description.content;
                             nuds['Date from'] = data.query.results.nuds.descMeta.typeDesc.dateRange.fromDate.content;
                             nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
-                            console.log(nuds);
+                            //console.log(nuds);
                             var identClass = item.id;
                             identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/\./g,"");
                             var nudsHtml = '<div class="col-md-3">';
@@ -342,9 +342,9 @@ Modernizr.load({
 
                                 $('#' + identClass).append(coins);
                                 console.log(identClass);
-                                console.log(coins);
+                                //console.log(coins);
                             });
-                            console.log(nudsHtml);
+                            //console.log(nudsHtml);
 
                         },
                         error: function() {
@@ -352,7 +352,7 @@ Modernizr.load({
                         }
                         });
 
-                        console.log(item.objects);
+                        //console.log(item.objects);
                         if(item['object-count'] > 0) {
                         html += '<div class="col-md-3">';
                         html += '<h2 class="lead text-center">' + item.id + ' examples</h2>';
