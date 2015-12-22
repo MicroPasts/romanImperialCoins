@@ -376,7 +376,7 @@ Modernizr.load({
                           maxItems: 3,
                           minItems: 1,
                         });
-
+                        $(function() {
                         $( "#slider" ).slider({
                           orientation: "horizontal",
                           range: "min",
@@ -388,7 +388,7 @@ Modernizr.load({
                           }
                         });
                         $( "#certainty" ).val( $( "#slider" ).slider( "value" ) );
-
+                        });
                     });
                 },
                 error: function(xhr, status) {
