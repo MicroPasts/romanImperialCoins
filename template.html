@@ -384,18 +384,19 @@ Modernizr.load({
             evt.preventDefault();
             var answer = $(evt.target).attr("value");
             if (typeof answer != 'undefined') {
-                task.answer = $("#transcription").serializeJSON();
-                //console.log(task.answer);
+                task.answer = $("#crowdmatchCoin").serializeJSON();
                 console.log(data);
-                task.answer.transcription = data;
+                task.answer.possibleRicID = $("possibleRicID").val();
                 task.answer.comments = $("#comments").val();
+                task.answer.revisePas = $("#revise").val();
                 console.log(task.answer);
                 pybossa.saveTask(task.id, task.answer).done(function() {
                     $("html, body").animate({ scrollTop: 0 }, "slow");
                     $("#success").fadeIn(500).fadeOut(500);
                     $("#loading").fadeIn(500).fadeOut(500);
-                    map.setTarget(null);
                     $('#comments').val('');
+                    $("#revise").val('');
+                    $("#possibleRicID").val('');
                     deferred.resolve();
                 });
             } else {
