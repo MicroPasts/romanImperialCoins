@@ -308,7 +308,7 @@ Modernizr.load({
                         dataType: "json",
                         success: function(data) {
                             console.log(data);
-                            var nuds = [];
+                            var nuds = {};
                             nuds['Title'] = data.query.results.nuds.descMeta.title.content;
                             nuds['Authority'] = data.query.results.nuds.descMeta.typeDesc.authority.persname.content;
                             nuds['Mint'] = data.query.results.nuds.descMeta.typeDesc.geographic.geogname[0].content;
