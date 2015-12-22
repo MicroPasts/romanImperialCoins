@@ -324,12 +324,12 @@ Modernizr.load({
                             console.log(nuds);
                             var identClass = parseInt(a.value) + 1;
                             var nudsHtml = '<div class="col-md-3">';
-                            nudsHtml += '<ul id="nomisma' + identClass + '">';
+                            nudsHtml += '<ul id="nomisma' + item.id + '">';
                             nudsHtml += '</ul></div>';
                             $('#metaCoins').append(nudsHtml);
                             $.each(nuds, function(key, value) {
                                 var coins = "<li>" + key + " : " + value + "</li>";
-                                var id = '#nomisma' + identClass;
+                                var id = '#nomisma' + item.id;
                                 $(id).append(coins);
                                 console.log(coins);
                             });
