@@ -132,6 +132,108 @@
 </div>
 <!-- End of DOM Skeleton row -->
 
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <h3>Roman Imperial Coinage concordance</h3>
+            </div>
+
+            <!-- Step 1 of the tutorial -->
+            <div id="0" class="modal-body" style="display:none">
+                <p>
+                    This application is on behalf of <a href="https://finds.org.uk" target="_blank">the Portable
+                    Antiquities Scheme</a>
+                    and <a href="http://britishmuseum.org" target="_blank">the British Museum</a>, in conjunction with
+                    the
+                    <a href="http://numismatics.org" target="_blank">American Numismatics Society</a>.
+                </p>
+                <p>
+                    Within this project, we would like your help to assist with computational, automatic assignment of a
+                    numismatic numbering system (Roman Imperial Coinage) to Portable Antiquities Scheme (PAS) data. The
+                    PAS database was built by the MicroPasts' project co-Investigator, Daniel Pett, and contains details
+                    for
+                    hundreds of thousands of Roman Imperial coins found by the public in England and Wales.
+                </p>
+                <p>
+                    Collaborating with Ethan Gruber, from the ANS, a script has been written to try and match PAS coins
+                    to the RIC numbering system. However, fuzzy matches are produced and ths is what we need help with
+                    fixing.
+                </p>
+            </div>
+
+            <!-- Step 2 of the tutorial -->
+            <div id="1" class="modal-body" style="display:none">
+                <p>
+                    So what would we like you to do?
+                </p>
+
+                <p>
+                    Each coin within this project can have up to 4 potential matches within the numbering system as
+                    shown
+                    in the example below:
+                </p>
+                <img src="https://micropasts-other.s3.amazonaws.com/other/matches.png" width="100%"/>
+                <p>
+                    We would like you to review the PAS recorded data and the ANS data derived through computational
+                    methods from
+                    the ANS' <a href="" target="_blank">Online Coins of the Roman Empire</a> (OCRE) project.
+                </p>
+            </div>
+
+            <!-- Step 2 of the tutorial -->
+            <div id="2" class="modal-body" style="display:none">
+                <p>
+                    Each record will be shown with up to 4 matches with the numbering format in this style:
+                </p>
+                <blockquote>
+                    <p>
+                        ric.1(2).tib.26
+                    </p>
+                </blockquote>
+                <p>
+                    Which means for example:
+                </p>
+                <ul>
+                    <li>Roman Imperial Coinage volume 1</li>
+                    <li>Second Edition</li>
+                    <li>Emperor Tiberius</li>
+                    <li>Number 26</li>
+                </ul>
+                <p>
+                    We would then like you to review and compare the metadata and example images for each matched type
+                    to the PAS data. If you feel you can choose a match, click a radio button. Then decide how certain you are
+                    with your ID by using the slider as shown below (0 = uncertain, 5 = maybe, 10 = extremely certain).
+                </p>
+                <img src="https://micropasts-other.s3.amazonaws.com/other/certainty.png" width="100%" />
+            </div>
+
+            <!-- Step 2 of the tutorial -->
+            <div id="3" class="modal-body" style="display:none">
+                <p>
+                    You then have the chance to tell us more! Firstly you can check the box to tell us that the PAS
+                    record needs revising and secondly whether you think that the coin cannot be attributed easily.
+                </p>
+                <p>
+                    If you would like to tell us more about the record, or suggest improvements, you could fill in the comments box.
+                </p>
+            </div>
+            <!-- End of stepped modal body -->
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn btn-default">Previous</a>
+                <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
+                <button id="startContrib" data-dismiss="modal" class="btn btn-primary" style="display:none"/>
+                </a>
+                <i class="glyphicon glyphicon-thumbs-up"></i> Let's start!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Client side scripts -->
 <script>
 // Quick fix for IE8
