@@ -321,15 +321,16 @@ Modernizr.load({
                             nuds['Date from'] = data.query.results.nuds.descMeta.typeDesc.dateRange.fromDate.content;
                             nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
                             console.log(nuds);
-                            var nudsHtml = '<div class="col-md-2">';
+                            var nudsHtml = '<div class="col-md-3">';
                             nudsHtml += '<ul id="nomisma-' + item.id + '">';
-                            $.each(nuds, function(key, value) {
-                                nudsHtml += "<li>" + key + " : " + value + "</li>";
-                            });
                             nudsHtml += '</ul></div>';
-                            console.log(nudsHtml);
                             $('#metaCoins').append(nudsHtml);
-
+                            $.each(nuds, function(key, value) {
+                                var data = "<li>" + key + " : " + value + "</li>";
+                                var id = '#nomisma-' + item.id;
+                                $(id).append(data);
+                            });
+                            console.log(nudsHtml);
                         },
                         error: function() {
                             alert("error with call");
