@@ -422,10 +422,9 @@ Modernizr.load({
                     $("#success").fadeIn(500).fadeOut(500);
                     $("#loading").fadeIn(500).fadeOut(500);
                     $('#comments').val('');
-                    $('#revise :checked').removeAttr('checked');
+                    $(this).removeAttr('checked');
                     $("#possibleRicID").val('');
                     $("#certainty").val('');
-                    $('#unattributable :checked').removeAttr('checked');
                     $("#radios").empty();
                     $("#matches").empty();
                     $("#metaCoins").empty();
