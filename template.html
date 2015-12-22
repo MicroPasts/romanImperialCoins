@@ -293,6 +293,7 @@ Modernizr.load({
                         console.log(data.types[3].id);
                     }
                     console.log(matches);
+                    var a = 1;
                     $.each(matches, function(index, item){
                         var radios = '';
                         radios += '<div class="col-md-3"><label class="radio-inline">';
@@ -321,13 +322,14 @@ Modernizr.load({
                             nuds['Date from'] = data.query.results.nuds.descMeta.typeDesc.dateRange.fromDate.content;
                             nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
                             console.log(nuds);
+                            var class = a + 1;
                             var nudsHtml = '<div class="col-md-3">';
-                            nudsHtml += '<ul id="nomisma-' + item.id + '">';
+                            nudsHtml += '<ul id="nomisma-' + class + '">';
                             nudsHtml += '</ul></div>';
                             $('#metaCoins').append(nudsHtml);
                             $.each(nuds, function(key, value) {
                                 var coins = "<li>" + key + " : " + value + "</li>";
-                                var id = '#nomisma-' + item.id;
+                                var id = '#nomisma-' + class;
                                 $(id).append(coins);
                                 console.log(coins);
                             });
