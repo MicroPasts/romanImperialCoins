@@ -90,6 +90,12 @@
             </div>
         </div>
         <div class="row">
+            <p>
+              <label for="certainty">How certain are you?:</label>
+              <input type="text" id="certainty" readonly style="border:0; color:#f6931f; font-weight:bold;">
+            </p>
+            <div id="slider" ></div>
+
             <div class="checkbox">
                 <label><input type="checkbox" id="revise">PAS record needs revising</label>
             </div>
@@ -371,6 +377,18 @@ Modernizr.load({
                           minItems: 1,
                         });
 
+                        $( "#slider" ).slider({
+                          orientation: "horizontal",
+                          range: "min",
+                          min: 1,
+                          max: 10,
+                          value: 5,
+                          slide: function( event, ui ) {
+                            $( "#certainty" ).val( ui.value );
+                          }
+                        });
+                        $( "#certainty" ).val( $( "#slider" ).slider( "value" ) );
+
                     });
                 },
                 error: function(xhr, status) {
@@ -392,6 +410,7 @@ Modernizr.load({
                 task.answer.comments = $("#comments").val();
                 task.answer.revisePas = $("#revise").is(':checked') ? 1 : 0;
                 task.answer.unattributable = $("#unattributable").is(':checked') ? 1 : 0;
+                task.answer.certainty = $("#certainty").val();
                 console.log(task.answer);
                 pybossa.saveTask(task.id, task.answer).done(function() {
                     $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -400,6 +419,7 @@ Modernizr.load({
                     $('#comments').val('');
                     $("#revise").val('');
                     $("#possibleRicID").val('');
+                    $("#certainty").val('');
                     $("#unattributable").val('');
                     $("#radios").empty();
                     $("#matches").empty();
