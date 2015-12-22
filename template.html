@@ -91,6 +91,9 @@
             <div class="checkbox">
                 <label><input type="checkbox" id="revise">PAS record needs revising</label>
             </div>
+            <div class="checkbox">
+                <label><input type="checkbox" id="unattributable">This cannot be attribute reliably</label>
+            </div>
             <div class="comments">
                 <div class="form-group">
                     <label class="control-label" for="comments">Transcriber's Comments</label>
@@ -391,7 +394,8 @@ Modernizr.load({
 
                 task.answer.possibleRicID = $('input[name=possibleRicID]:checked', '#crowdmatchCoin').val();
                 task.answer.comments = $("#comments").val();
-                task.answer.revisePas = $("#revise").val();
+                task.answer.revisePas = $("#revise").is(':checked') ? 1 : 0;
+                task.answer.unattributable = $("#unattributable").is(':checked') ? 1 : 0;
                 console.log(task.answer);
                 pybossa.saveTask(task.id, task.answer).done(function() {
                     $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -400,6 +404,7 @@ Modernizr.load({
                     $('#comments').val('');
                     $("#revise").val('');
                     $("#possibleRicID").val('');
+                    $("#unattributable").val('');
                     $("#radios").empty();
                     $("#matches").empty();
                     deferred.resolve();
