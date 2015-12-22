@@ -304,8 +304,10 @@ Modernizr.load({
                     //console.log(matches);
                     var a = 1;
                     $.each(matches, function(index, item){
+                        var identClass = item.id;
+                        identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/\./g,"");
                         var radios = '';
-                        radios += '<div class="col-md-3"><label class="radio-inline">';
+                        radios += '<div class="col-md-3" id="nomisma' + identClass + '"><label class="radio-inline">';
                         radios += '<input type="radio" id="possibleRicID" name="possibleRicID" value="' + item.id + '">';
                         radios += item.id + '</label></div>';
                         $('#radios').append(radios);
@@ -331,12 +333,11 @@ Modernizr.load({
                             nuds['Date from'] = data.query.results.nuds.descMeta.typeDesc.dateRange.fromDate.content;
                             nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
                             //console.log(nuds);
-                            var identClass = item.id;
-                            identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/\./g,"");
-                            var nudsHtml = '<div class="col-md-3">';
+
+                            var nudsHtml = '<div>';
                             nudsHtml += '<ul id="' + identClass + '">';
                             nudsHtml += '</ul></div>';
-                            $('#metaCoins').append(nudsHtml);
+                            $('#nomisma' + identclass).append(nudsHtml);
                             $.each(nuds, function(key, value) {
                                 var coins = "<li>" + key + " : " + value + "</li>";
 
