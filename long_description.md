@@ -1,6 +1,7 @@
 # Roman Imperial Coin crowd sourcing
 
 ![](https://micropasts-other.s3.amazonaws.com/other/ocre.png)
+
 This project has been formulated by Daniel Pett (British Museum) and Ethan Gruber (American Numismatic Society) to aid
 with the assignation of Roman Imperial Coinage (RIC) identifiers. 
 

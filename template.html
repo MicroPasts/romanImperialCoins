@@ -318,7 +318,6 @@ Modernizr.load({
         url: task.info.object + '/format/json',
         dataType: 'json',
         success: function(data){
-            //console.log(data[1][0]);
 
             var numismatic = {};
 
@@ -358,8 +357,6 @@ Modernizr.load({
                 numismatic['Current RIC ID'] = data[1][0].ricID;
             }
 
-            console.log(numismatic);
-
             if(data[1][0].filename != null) {
                 var filename = data[1][0].filename;
                 var imageDir = data[1][0].imagedir;
@@ -369,13 +366,12 @@ Modernizr.load({
 
             $.each(numismatic, function(key, value) {
                 var html = "<li>" + key + " : " + value + "</li>";
-                //console.log(html);
                 $('#details').append(html);
             });
 
         },
         error: function() {
-            alert("error with call");
+            console.log("error with call");
         }
     });
       var ids = [];
@@ -412,9 +408,7 @@ Modernizr.load({
                     }
                     if(data.types[3].id !== '') {
                         matches.push(data.types[3]);
-                        //console.log(data.types[3].id);
                     }
-                    //console.log(matches);
                     var a = 1;
                     $.each(matches, function(index, item){
                         var identClass = item.id;
@@ -462,7 +456,7 @@ Modernizr.load({
 
                         },
                         error: function() {
-                            alert("error with call");
+                            console.log("error with call");
                         }
                         });
 
@@ -498,7 +492,7 @@ Modernizr.load({
                     });
                 },
                 error: function(xhr, status) {
-                    //alert("error with call");
+                    console.log("error with call");
                 }
             });
         $(function() {
