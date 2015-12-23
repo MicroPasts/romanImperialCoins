@@ -20,6 +20,7 @@ populate the ANS OCRE with PAS examples.
 ![British Museum](http://finds.org.uk/images/logos/bm_logo.png)
 ![Portable Antiquities Scheme](http://www.dayofarchaeology.com/wp-content/uploads/2011/05/pasrgbsize4.jpg)
 ![American Numismatics Society](http://numismatics.org/pmwiki/pub/skins/ans/ans_seal.gif)
+![Nomisma](http://nomisma.org)
 
 ### Find the code on GitHub
 
