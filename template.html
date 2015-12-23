@@ -426,7 +426,6 @@ Modernizr.load({
                         url: 'https://query.yahooapis.com/v1/public/yql?q=select%20descMeta%20from%20xml%20where%20url%3D"http%3A%2F%2Fnumismatics.org%2Focre%2Fid%2F' + item.id + '.xml"&format=json',
                         dataType: "json",
                         success: function(data) {
-                            //console.log(data);
                             var nuds = {};
                             nuds['Title'] = data.query.results.nuds.descMeta.title.content;
                             nuds['Authority'] = data.query.results.nuds.descMeta.typeDesc.authority.persname.content;
@@ -439,7 +438,6 @@ Modernizr.load({
                             nuds['Reverse Description'] = data.query.results.nuds.descMeta.typeDesc.reverse.type.description.content;
                             nuds['Date from'] = data.query.results.nuds.descMeta.typeDesc.dateRange.fromDate.content;
                             nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
-                            //console.log(nuds);
 
                             var nudsHtml = '<div>';
                             nudsHtml += '<ul id="' + identClass + '">';
@@ -447,13 +445,8 @@ Modernizr.load({
                             $('#nomisma' + identClass).append(nudsHtml);
                             $.each(nuds, function(key, value) {
                                 var coins = "<li>" + key + " : " + value + "</li>";
-
                                 $('#' + identClass).append(coins);
-                                console.log(identClass);
-                                //console.log(coins);
                             });
-                            //console.log(nudsHtml);
-
                         },
                         error: function() {
                             console.log("error with call");
