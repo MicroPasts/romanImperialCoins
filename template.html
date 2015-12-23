@@ -78,7 +78,7 @@
                     </div>
                 </div>
 
-                 <div class="row">
+                <div class="row">
                     <div id="metaCoins">
 
                     </div>
@@ -95,10 +95,10 @@
         </div>
         <div class="row">
             <p>
-              <label for="certainty">How certain are you?:</label>
-              <input type="text" id="certainty" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                <label for="certainty">How certain are you?:</label>
+                <input type="text" id="certainty" readonly style="border:0; color:#f6931f; font-weight:bold;">
             </p>
-            <div id="slider" ></div>
+            <div id="slider"></div>
 
             <div class="checkbox">
                 <label><input type="checkbox" id="revise">PAS record needs revising</label>
@@ -206,21 +206,25 @@
                     We would then like you to review and compare the metadata and example images for each matched type
                     to the PAS data using the image carousel below the text (see below).
                 </p>
-                <img src="https://micropasts-other.s3.amazonaws.com/other/carousel.png"/>
-                <p>If you feel you can choose a match, click a radio button. Then decide how certain you are
-                    with your ID by using the slider as shown below (0 = uncertain, 5 = maybe, 10 = extremely certain).
-                </p>
-                <img src="https://micropasts-other.s3.amazonaws.com/other/certainty.png" width="100%"/>
+                <img src="https://micropasts-other.s3.amazonaws.com/other/carousel.png" height="300px"/>
+
             </div>
 
             <!-- Step 2 of the tutorial -->
             <div id="3" class="modal-body" style="display:none">
+
+                <p>
+                    If you feel you can choose a match, click a radio button. Then decide how certain you are
+                    with your ID by using the slider as shown below (0 = uncertain, 5 = maybe, 10 = extremely certain).
+                </p>
+                <img src="https://micropasts-other.s3.amazonaws.com/other/certainty.png" width="100%"/>
                 <p>
                     You then have the chance to tell us more! Firstly you can check the box to tell us that the PAS
                     record needs revising and secondly whether you think that the coin cannot be attributed easily.
                 </p>
                 <p>
-                    If you would like to tell us more about the record, or suggest improvements, you could fill in the comments box.
+                    If you would like to tell us more about the record, or suggest improvements, you could fill in the
+                    comments box.
                 </p>
             </div>
             <!-- End of stepped modal body -->
@@ -244,6 +248,8 @@ Modernizr.load({
   test: window.JSON,
   nope: '/static/js/vendor/json2.min.js'
 });
+
+
 </script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/flexslider.min.css"
@@ -275,6 +281,8 @@ Modernizr.load({
     }
     showStep('next');
     $("#modal").modal('show');
+
+
 </script>
 
 <!-- Pyboss scripts -->
@@ -548,6 +556,8 @@ Modernizr.load({
         }
     });
     pybossa.run('ricConcordance');
+
+
 </script>
 <style>
     .flex-caption {
