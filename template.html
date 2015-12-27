@@ -427,7 +427,7 @@ Modernizr.load({
                             break;
                     }
                     var cols = 'col-md-' + value;
-                    console.log(cols);
+
                     $.each(matches, function(index, item){
                         var identClass = item.id;
                         identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/\./g,"");
@@ -496,8 +496,8 @@ Modernizr.load({
                           animationLoop: false,
                           slideshow: false,
                           touch: true,
-                          maxItems: 3,
-                          minItems: 1,
+                          maxItems: 6,
+                          minItems: 2,
                         });
 
                     });
