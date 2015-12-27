@@ -410,7 +410,23 @@ Modernizr.load({
                         matches.push(data.types[3]);
                     }
 
+                    var arrayLen = matches.length;
 
+                    switch(arrayLen){
+                        case 1:
+                            value = 12;
+                            break;
+                        case 2:
+                            value =  6;
+                            break;
+                        case 3:
+                            value = 4;
+                            break;
+                        case 4:
+                            value = 3;
+                            break;
+                    }
+                    var cols = 'col-md-' + value;
 
                     $.each(matches, function(index, item){
                         var identClass = item.id;
@@ -590,7 +606,7 @@ Modernizr.load({
     margin-right: 0px;
     margin-left: 0px;
     }
-    #details li, ocreMatches li {
+    #details li, .ocreMatches li {
     margin-left: -40px;
     }
 </style>
