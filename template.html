@@ -432,7 +432,7 @@ Modernizr.load({
                         var identClass = item.id;
                         identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/\./g,"");
                         var radios = '';
-                        radios += '<div class="col-md-3" id="nomisma' + identClass + '"><label class="radio-inline">';
+                        radios += '<div class="' + cols + '" id="nomisma' + identClass + '"><label class="radio-inline">';
                         radios += '<input type="radio" id="possibleRicID" name="possibleRicID" value="' + item.id + '">';
                         radios += item.id + '</label></div>';
                         $('#radios').append(radios);
@@ -473,7 +473,7 @@ Modernizr.load({
 
                         //console.log(item.objects);
                         if(item['object-count'] > 0) {
-                        html += '<div class="col-md-3">';
+                        html += '<div class="' + cols + '">';
                         html += '<h2 class="lead text-center">' + item.id + ' examples</h2>';
                         html += '<div class="flexslider">';
                         html += '<ul class="slides">';
