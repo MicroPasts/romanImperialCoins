@@ -319,7 +319,7 @@ Modernizr.load({
         url: task.info.object + '/format/json',
         dataType: 'json',
         success: function(data){
-            var uri = '<p><a href="' + task.info.object + '">Full record ' + data[1][0].old_findID + '</a>'</p>';
+            var uri = '<p><a href="' + task.info.object + '">Full record ' + data[1][0].old_findID + '</a></p>';
             $('#uri').append(uri);
             var numismatic = {};
 
