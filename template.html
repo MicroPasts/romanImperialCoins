@@ -63,6 +63,7 @@
         <div class="row">
             <div class="pasCoin">
                 <div class="col-md-6">
+                    <div id="uri"></div>
                     <ul id="details"></ul>
                 </div>
                 <div class="col-md-6">
@@ -318,7 +319,8 @@ Modernizr.load({
         url: task.info.object + '/format/json',
         dataType: 'json',
         success: function(data){
-
+            var uri = '<p><a href="' + task.info.object + '">Full record ' + data[1][0].old_findID + '</a>'</p>';
+            $('#uri').append(uri);
             var numismatic = {};
 
             numismatic['Record ID'] = data[1][0].old_findID;
