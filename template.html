@@ -409,7 +409,9 @@ Modernizr.load({
                     if(data.types[3].id !== '') {
                         matches.push(data.types[3]);
                     }
-                    var a = 1;
+
+
+
                     $.each(matches, function(index, item){
                         var identClass = item.id;
                         identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/\./g,"");
@@ -489,18 +491,18 @@ Modernizr.load({
                 }
             });
         $(function() {
-                        $( "#slider" ).slider({
-                          orientation: "horizontal",
-                          range: "min",
-                          min: 1,
-                          max: 10,
-                          value: 5,
-                          slide: function( event, ui ) {
-                            $( "#certainty" ).val( ui.value );
-                          }
-                        });
-                        $( "#certainty" ).val( $( "#slider" ).slider( "value" ) );
-                        });
+        $( "#slider" ).slider({
+          orientation: "horizontal",
+          range: "min",
+          min: 1,
+          max: 10,
+          value: 5,
+          slide: function( event, ui ) {
+            $( "#certainty" ).val( ui.value );
+          }
+        });
+        $( "#certainty" ).val( $( "#slider" ).slider( "value" ) );
+        });
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
         $('#support').tooltip({'placement': 'top'});
@@ -587,5 +589,8 @@ Modernizr.load({
     .row {
     margin-right: 0px;
     margin-left: 0px;
+    }
+    #details li, ocreMatches li {
+    margin-left: -40px;
     }
 </style>
