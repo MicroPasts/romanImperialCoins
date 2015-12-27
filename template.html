@@ -427,7 +427,7 @@ Modernizr.load({
                             break;
                     }
                     var cols = 'col-md-' + value;
-
+                    console.log(cols);
                     $.each(matches, function(index, item){
                         var identClass = item.id;
                         identClass = identClass.replace(/"/g, "").replace(/'/g, "").replace(/\(|\)/g, "").replace(/\./g,"");
@@ -458,7 +458,7 @@ Modernizr.load({
                             nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
 
                             var nudsHtml = '<div>';
-                            nudsHtml += '<ul id="' + identClass + '">';
+                            nudsHtml += '<ul id="' + identClass + '" class="ocre">';
                             nudsHtml += '</ul></div>';
                             $('#nomisma' + identClass).append(nudsHtml);
                             $.each(nuds, function(key, value) {
@@ -606,7 +606,7 @@ Modernizr.load({
     margin-right: 0px;
     margin-left: 0px;
     }
-    #details li, .ocreMatches li {
+    #details li, .ocre li {
     margin-left: -40px;
     }
 </style>
