@@ -27,5 +27,5 @@ then populate the ANS OCRE platform with PAS examples.
 
 ### Find the code on GitHub
 
-[![](http://media.creativebloq.futurecdn.net/sites/creativebloq.com/files/images/2013/06/16-logo.jpg)]
+[![](https://micropasts-other.s3.amazonaws.com/other/github_logo.png)]
 (https://github.com/MicroPasts/ricConcordance)
