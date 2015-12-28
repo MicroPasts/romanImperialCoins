@@ -1,7 +1,9 @@
 <script src="/static/js/vendor/jquery.serializeJSON.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/3.3.0/ekko-lightbox.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/3.3.0/ekko-lightbox.min.css">
 
 <!-- Start of messages -->
 <div style="margin-top:15px;">
@@ -67,7 +69,7 @@
                     <ul id="details"></ul>
                 </div>
                 <div class="col-md-6">
-                    <img id="pasImage" width="300" src="" class="text-center" style="max-height:300; max-width:300;"/>
+                    <a href="" id="pasImageLink"><img id="pasImage" width="300" src="" class="text-center" style="max-height:300; max-width:300;"/></a>
                 </div>
             </div>
         </div>
@@ -286,7 +288,7 @@ Modernizr.load({
 
 </script>
 
-<!-- Pyboss scripts -->
+<!-- Pybossa scripts -->
 <script>
     function loadUserProgress() {
         pybossa.userProgress('ricConcordance').done(function(data){
@@ -298,6 +300,7 @@ Modernizr.load({
             $("#total").text(data.total);
             $("#done").text(data.done);
             $('a[rel]').tooltip({'placement': 'left'});
+            $('#pasImageLink').ekkoLightbox(options);
         });
     }
     pybossa.taskLoaded(function(task, deferred) {
@@ -364,6 +367,7 @@ Modernizr.load({
                 var imageDir = data[1][0].imagedir;
                 var root = 'https://finds.org.uk/';
                 $("#pasImage").attr("src", root + imageDir + filename);
+                $("#pasImage").attr("href", root + imageDir + filename);
             }
 
             $.each(numismatic, function(key, value) {
