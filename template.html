@@ -367,7 +367,7 @@ Modernizr.load({
                 var imageDir = data[1][0].imagedir;
                 var root = 'https://finds.org.uk/';
                 $("#pasImage").attr("src", root + imageDir + filename);
-                $("#pasImage").attr("href", root + imageDir + filename);
+                $("#pasImageLink").attr("href", root + imageDir + filename);
             }
 
             $.each(numismatic, function(key, value) {
