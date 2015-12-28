@@ -446,7 +446,7 @@ Modernizr.load({
                         dataType: "json",
                         success: function(data) {
                             var nuds = {};
-                            nuds['Title'] = '<a target="_blank" href="http://numismatics.org/ocre/id/' + item.id + '">' + data.query.results.nuds.descMeta.title.content + '</a>';
+                            nuds['Title'] = '<a target="_blank" href="http://numismatics.org/ocre/id/' + item.id + '">' + data.query.results.nuds.descMeta.title.content + '</a> <i class="icon-external-link"></i>';
                             nuds['Authority'] = data.query.results.nuds.descMeta.typeDesc.authority.persname.content;
                             nuds['Mint'] = data.query.results.nuds.descMeta.typeDesc.geographic.geogname[0].content;
                             nuds['Denomination'] = data.query.results.nuds.descMeta.typeDesc.denomination.content;
@@ -483,7 +483,7 @@ Modernizr.load({
                          if(object.obvRef != null) {
                             html += '<li>';
                             html += '<img src="' + object.obvThumb + '" width="50"/><img src="' + object.revThumb + '" width="50"/>';
-                            html += '<p class="flex-caption">' + object.collection + ': <a target="_blank" href="' + object.uri + '">' + object.identifier +'</a></p>';
+                            html += '<p class="flex-caption">' + object.collection + ': <a target="_blank" href="' + object.uri + '">' + object.identifier +'</a> <i class="icon-external-link"></i></p>';
                             html += '</li>';
                             }
                         });
@@ -594,21 +594,30 @@ Modernizr.load({
     margin-left: auto;
     margin-right: auto;
     }
+
     #metaCoins {
     margin-top: 20px;
     }
+
     .radio-inline {
     padding-left: 40 px;
     margin-bottom: 20px;
     }
+
     #crowdmatchCoin li {
     list-style: none;
     }
+
     .row {
     margin-right: 0px;
     margin-left: 0px;
     }
+
     #details li, .ocre li {
     margin-left: -40px;
+    }
+
+    .flexcaption a {
+    color: white;
     }
 </style>
