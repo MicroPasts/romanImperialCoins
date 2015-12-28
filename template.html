@@ -446,7 +446,7 @@ Modernizr.load({
                         dataType: "json",
                         success: function(data) {
                             var nuds = {};
-                            nuds['Title'] = '<a href="http://numismatics.org/ocre/id/' + item.id + '">' + data.query.results.nuds.descMeta.title.content + '</a>';
+                            nuds['Title'] = '<a target="_blank" href="http://numismatics.org/ocre/id/' + item.id + '">' + data.query.results.nuds.descMeta.title.content + '</a>';
                             nuds['Authority'] = data.query.results.nuds.descMeta.typeDesc.authority.persname.content;
                             nuds['Mint'] = data.query.results.nuds.descMeta.typeDesc.geographic.geogname[0].content;
                             nuds['Denomination'] = data.query.results.nuds.descMeta.typeDesc.denomination.content;
