@@ -388,7 +388,6 @@ Modernizr.load({
       if(task.info.match4 != null) {
         ids.push(task.info.match4);
       }
-      //console.log(ids);
         var nomismaUrl = "http://nomisma.org/apis/numishareResults?identifiers=";
         var baseUri = "&baseUri=http://numismatics.org/ocre/id/";
         var identifiers = ids.join("|");
@@ -484,7 +483,7 @@ Modernizr.load({
                          if(object.obvRef != null) {
                             html += '<li>';
                             html += '<img src="' + object.obvThumb + '" width="50"/><img src="' + object.revThumb + '" width="50"/>';
-                            //html += '<p class="flex-caption">' + object.collection + ': ' + object.identifier +'</p>';
+                            html += '<p class="flex-caption">' + object.collection + ': ' + object.identifier +'</p>';
                             html += '</li>';
                             }
                         });
