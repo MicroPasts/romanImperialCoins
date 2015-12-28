@@ -69,7 +69,7 @@
                     <ul id="details"></ul>
                 </div>
                 <div class="col-md-6">
-                    <a href="" id="pasImageLink"><img id="pasImage" width="300" src="" class="text-center" style="max-height:300; max-width:300;"/></a>
+                    <a href="" id="pasImageLink" data-toggle="lightbox"><img id="pasImage" width="300" src="" class="text-center" style="max-height:300; max-width:300;"/></a>
                 </div>
             </div>
         </div>
@@ -300,7 +300,6 @@ Modernizr.load({
             $("#total").text(data.total);
             $("#done").text(data.done);
             $('a[rel]').tooltip({'placement': 'left'});
-            $('#pasImageLink').ekkoLightbox(options);
         });
     }
     pybossa.taskLoaded(function(task, deferred) {
@@ -312,6 +311,12 @@ Modernizr.load({
             deferred.resolve(task);
         }
     });
+
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+    });
+
       $(window).resize(function(){
         console.log('Window resized');
       });
