@@ -1,5 +1,7 @@
 # Roman Imperial Coin crowd sourcing
 
+[![DOI](https://zenodo.org/badge/19055/MicroPasts/romanImperialCoins.svg)](https://zenodo.org/badge/latestdoi/19055/MicroPasts/romanImperialCoins)
+
 This project has been formulated by Daniel Pett (British Museum) and Ethan Gruber (American Numismatic Society) to aid
 with the assignation of Roman Imperial Coinage (RIC) identifiers. 
 
