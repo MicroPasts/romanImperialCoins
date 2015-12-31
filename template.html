@@ -507,6 +507,8 @@ Modernizr.load({
                         html += '</div>';
                         html += '</div>';
                         $('#matches').append(html);
+                        } else {
+                        html += '<div class="' + cols + '"></div>';
                         }
                         $('.flexslider').flexslider({
                           animation: "slide",
@@ -563,6 +565,8 @@ Modernizr.load({
                     $("#radios").empty();
                     $("#matches").empty();
                     $("#pasImage").empty();
+                    $("#pasImageText").empty();
+                    $("#pasImageLink").empty();
                     $("#details").empty();
                     $("#metaCoins").empty();
                     $("#uri").empty();
