@@ -489,12 +489,16 @@ Modernizr.load({
                         });
 
                         console.log(item.objects);
+
                         if(item['object-count'] > 0) {
+
                         html += '<div class="' + cols + '">';
                         html += '<h2 class="lead text-center">' + item.id + ' examples</h2>';
                         html += '<div class="flexslider">';
                         html += '<ul class="slides">';
+
                         var objects = item.objects;
+
                         $.each(objects, function(index, object){
                          if(object.obvRef != null) {
                             html += '<li>';
@@ -503,12 +507,14 @@ Modernizr.load({
                             html += '</li>';
                             }
                         });
+
                         html += '</ul>';
                         html += '</div>';
                         html += '</div>';
                         $('#matches').append(html);
-                        } else {
+                        }  else {
                         html += '<div class="' + cols + '"></div>';
+                        $('#matches').append(html);
                         }
                         $('.flexslider').flexslider({
                           animation: "slide",
