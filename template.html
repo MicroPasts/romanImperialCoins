@@ -70,6 +70,7 @@
                 </div>
                 <div class="col-md-6">
                     <a href="" id="pasImageLink" data-toggle="lightbox"><img id="pasImage" width="300" src="" class="text-center" style="max-height:300; max-width:300;"/></a>
+                    <p id="pasImageText"></p>
                 </div>
             </div>
         </div>
@@ -373,6 +374,11 @@ Modernizr.load({
                 var root = 'https://finds.org.uk/';
                 $("#pasImage").attr("src", root + imageDir + filename);
                 $("#pasImageLink").attr("href", root + imageDir + filename);
+                $('#pasImageText').append('There may be more images attached to the original PAS record.');
+            } else {
+                $("#pasImage").attr("src","http://www.dayofarchaeology.com/wp-content/uploads/2011/05/pasrgbsize4.jpg");
+                $("#pasImageLink").attr("href","#");
+                $('#pasImageText').append('No image attached to PAS record.');
             }
 
             $.each(numismatic, function(key, value) {
