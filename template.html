@@ -464,9 +464,10 @@ Modernizr.load({
                             nuds['Reverse Legend'] = data.query.results.nuds.descMeta.typeDesc.reverse.legend.content;
                             nuds['Obverse Description'] = data.query.results.nuds.descMeta.typeDesc.obverse.type.description.content;
                             nuds['Reverse Description'] = data.query.results.nuds.descMeta.typeDesc.reverse.type.description.content;
+                            if(data.query.results.nuds.descMeta.typeDesc.dateRange != null) {
                             nuds['Date from'] = data.query.results.nuds.descMeta.typeDesc.dateRange.fromDate.content;
                             nuds['Date to'] = data.query.results.nuds.descMeta.typeDesc.dateRange.toDate.content;
-
+                            }
                             var nudsHtml = '<div>';
                             nudsHtml += '<ul id="' + identClass + '" class="ocre">';
                             nudsHtml += '</ul></div>';
